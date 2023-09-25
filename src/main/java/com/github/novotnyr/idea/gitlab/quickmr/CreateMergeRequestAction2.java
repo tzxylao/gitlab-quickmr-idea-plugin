@@ -65,6 +65,8 @@ public class CreateMergeRequestAction2 extends AnAction {
     }
 
     public void setDefultVal(Settings settings) {
+        // uat移除原分支
+        settings.setRemoveSourceBranchOnMerge(true);
         if (StringUtils.isBlank(settings.getDefaultTargetBranch())) {
             settings.setDefaultTargetBranch("uat");
         }
