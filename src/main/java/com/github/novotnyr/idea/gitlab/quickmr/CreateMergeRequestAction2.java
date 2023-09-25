@@ -70,9 +70,6 @@ public class CreateMergeRequestAction2 extends AnAction {
         if (StringUtils.isBlank(settings.getDefaultTargetBranch())) {
             settings.setDefaultTargetBranch("uat");
         }
-        if (StringUtils.isBlank(settings.getAccessToken())) {
-            settings.setAccessToken("glpat-2uSpGH_vQamQPonJ3zML");
-        }
         if (StringUtils.isBlank(settings.getDefaultTitle())) {
             settings.setDefaultTitle("{{lastCommitMessage}}");
         }
