@@ -44,5 +44,5 @@ patchPluginXml {
 }
 
 publishPlugin {
-    token = intellijPublishToken
+    token = "glpat-2uSpGH_vQamQPonJ3zML"
 }

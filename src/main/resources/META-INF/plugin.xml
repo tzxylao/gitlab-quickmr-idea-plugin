@@ -38,7 +38,11 @@
 
     <actions>
         <action id="com.github.novotnyr.idea.gitlab.quickmr.CreateMergeRequestAction"
-                class="com.github.novotnyr.idea.gitlab.quickmr.CreateMergeRequestAction" text="Quick Merge Request">
+                class="com.github.novotnyr.idea.gitlab.quickmr.CreateMergeRequestAction" text="Quick Merge To Test">
+            <add-to-group group-id="Git.ContextMenu"/>
+        </action>
+        <action id="com.github.novotnyr.idea.gitlab.quickmr.CreateMergeRequestAction2"
+                class="com.github.novotnyr.idea.gitlab.quickmr.CreateMergeRequestAction2" text="Quick Merge To Uat">
             <add-to-group group-id="Git.ContextMenu"/>
         </action>
         <action class="com.github.novotnyr.idea.gitlab.quickmr.CreateMergeRequestAndAssignToActionGroup" id="com.github.novotnyr.idea.gitlab.quickmr.CreateMergeRequestAndAssignToActionGroup">

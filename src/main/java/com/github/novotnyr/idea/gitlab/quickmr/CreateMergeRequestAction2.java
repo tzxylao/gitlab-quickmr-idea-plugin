@@ -1,11 +1,7 @@
 package com.github.novotnyr.idea.gitlab.quickmr;
 
 import com.github.novotnyr.idea.git.GitService;
-import com.github.novotnyr.idea.gitlab.AccessDeniedException;
-import com.github.novotnyr.idea.gitlab.DuplicateMergeRequestException;
-import com.github.novotnyr.idea.gitlab.MergeRequestRequest;
-import com.github.novotnyr.idea.gitlab.MergeRequestResponse;
-import com.github.novotnyr.idea.gitlab.User;
+import com.github.novotnyr.idea.gitlab.*;
 import com.github.novotnyr.idea.gitlab.quickmr.settings.Settings;
 import com.github.novotnyr.idea.gitlab.quickmr.settings.SettingsUi;
 import com.intellij.ide.browsers.BrowserLauncher;
@@ -27,7 +23,7 @@ import org.apache.commons.lang.StringUtils;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import javax.swing.Icon;
+import javax.swing.*;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
@@ -38,22 +34,22 @@ import java.util.concurrent.CompletionException;
 
 import static java.util.concurrent.CompletableFuture.completedFuture;
 
-public class CreateMergeRequestAction extends AnAction {
+public class CreateMergeRequestAction2 extends AnAction {
     private final GitService gitService = ServiceManager.getService(GitService.class);
     private User assignee;
 
-    public CreateMergeRequestAction() {
+    public CreateMergeRequestAction2() {
     }
 
-    public CreateMergeRequestAction(Icon icon) {
+    public CreateMergeRequestAction2(Icon icon) {
         super(icon);
     }
 
-    public CreateMergeRequestAction(@Nullable String text) {
+    public CreateMergeRequestAction2(@Nullable String text) {
         super(text);
     }
 
-    public CreateMergeRequestAction(@Nullable String text, @Nullable String description, @Nullable Icon icon) {
+    public CreateMergeRequestAction2(@Nullable String text, @Nullable String description, @Nullable Icon icon) {
         super(text, description, icon);
     }
 
@@ -67,9 +63,10 @@ public class CreateMergeRequestAction extends AnAction {
             createMergeRequestAsync(selectedModule, gitLabProjectId);
         });
     }
+
     public void setDefultVal(Settings settings) {
         if (StringUtils.isBlank(settings.getDefaultTargetBranch())) {
-            settings.setDefaultTargetBranch("test");
+            settings.setDefaultTargetBranch("uat");
         }
         if (StringUtils.isBlank(settings.getAccessToken())) {
             settings.setAccessToken("glpat-2uSpGH_vQamQPonJ3zML");
