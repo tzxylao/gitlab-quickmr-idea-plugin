@@ -72,10 +72,10 @@ public class CreateMergeRequestAction2 extends AnAction {
             settings.setAccessToken("glpat-2uSpGH_vQamQPonJ3zML");
         }
         if (StringUtils.isBlank(settings.getDefaultTitle())) {
-            settings.setDefaultTitle("{{lastCommitMessage}}");
+            settings.setDefaultTitle("Merge branch {{sourceBranch}} into {{targetBranch}}");
         }
         if (StringUtils.isBlank(settings.getDefaultDescription())) {
-            settings.setDefaultDescription("{{lastCommitMessage}}");
+            settings.setDefaultDescription("Merge branch {{sourceBranch}} into {{targetBranch}}:{{lastCommitMessage}}");
         }
         if (StringUtils.isBlank(settings.getGitLabUri())) {
             settings.setGitLabUri("https://gitlab.mindflow.work/api/v4");
