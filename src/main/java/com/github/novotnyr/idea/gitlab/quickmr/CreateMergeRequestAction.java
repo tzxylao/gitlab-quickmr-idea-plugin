@@ -69,6 +69,7 @@ public class CreateMergeRequestAction extends AnAction {
     }
     public void setDefultVal(Settings settings) {
         settings.setDefaultTargetBranch("test");
+        settings.setRemoveSourceBranchOnMerge(false);
         if (StringUtils.isBlank(settings.getAccessToken())) {
             settings.setAccessToken("glpat-2uSpGH_vQamQPonJ3zML");
         }
