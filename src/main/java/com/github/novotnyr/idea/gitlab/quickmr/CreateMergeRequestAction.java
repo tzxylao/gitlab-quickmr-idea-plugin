@@ -89,6 +89,11 @@ public class CreateMergeRequestAction extends AnAction {
             user.setName("纳兰");
             user.setUsername("nayan");
             users.add(user);
+            User user2 = new User();
+            user2.setId(25);
+            user2.setName("小池");
+            user2.setUsername("duqiang");
+            users.add(user2);
             settings.setDefaultAssignees(users);
         }
     }
