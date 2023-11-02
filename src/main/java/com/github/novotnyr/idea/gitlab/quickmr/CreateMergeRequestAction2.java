@@ -67,14 +67,12 @@ public class CreateMergeRequestAction2 extends AnAction {
     public void setDefultVal(Settings settings) {
         // uat移除原分支
         settings.setRemoveSourceBranchOnMerge(true);
-        if (StringUtils.isBlank(settings.getDefaultTargetBranch())) {
-            settings.setDefaultTargetBranch("uat");
-        }
+        settings.setDefaultTargetBranch("uat");
         if (StringUtils.isBlank(settings.getDefaultTitle())) {
-            settings.setDefaultTitle("{{lastCommitMessage}}");
+            settings.setDefaultTitle("Merge branch {{sourceBranch}} into {{targetBranch}}");
         }
         if (StringUtils.isBlank(settings.getDefaultDescription())) {
-            settings.setDefaultDescription("{{lastCommitMessage}}");
+            settings.setDefaultDescription("Merge branch {{sourceBranch}} into {{targetBranch}}:{{lastCommitMessage}}");
         }
         if (StringUtils.isBlank(settings.getGitLabUri())) {
             settings.setGitLabUri("https://gitlab.mindflow.work/api/v4");
@@ -86,6 +84,11 @@ public class CreateMergeRequestAction2 extends AnAction {
             user.setName("纳兰");
             user.setUsername("nayan");
             users.add(user);
+            User user2 = new User();
+            user2.setId(25);
+            user2.setName("小池");
+            user2.setUsername("duqiang");
+            users.add(user2);
             settings.setDefaultAssignees(users);
         }
     }
